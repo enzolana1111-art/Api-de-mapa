@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BH Ouvidoria - Mapa</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    html,body{height:100%;margin:0}
+    #app{display:flex;height:100vh;font-family:Arial,Helvetica,sans-serif}
+    #sidebar{width:320px;padding:12px;border-right:1px solid #ddd;box-sizing:border-box;overflow:auto}
+    #map{flex:1}
+    #top-areas{position:absolute;top:12px;right:12px;z-index:1000;background:#fff;padding:8px;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,0.15);min-width:180px;font-size:13px}
+    h1{font-size:18px;margin:0 0 8px}
+    label{display:block;margin-top:8px;font-size:13px}
+    select,input{width:100%;padding:6px;margin-top:4px;border:1px solid #ccc;border-radius:4px}
+    .list{margin-top:12px}
+    .item{padding:8px;border-bottom:1px solid #eee;cursor:pointer}
+    .item:hover{background:#f7f7f7}
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div id="sidebar">
+      <h1>BH Ouvidoria — Mapa</h1>
+      <div>
+        <label>Tipo</label>
+        <select id="filter-type">
+          <option value="">Todos</option>
+        </select>
+      </div>
+      <div>
+        <label>Status</label>
+        <select id="filter-status">
+          <option value="">Todos</option>
+        </select>
+      </div>
+      <div>
+        <label>Buscar</label>
+        <input id="search" placeholder="texto no título ou descrição" />
+      </div>
+
+      <div class="list" id="list"></div>
+      <p style="margin-top:12px;font-size:12px;color:#666">Fonte: API local em <strong>http://localhost:3000/map</strong></p>
+    </div>
+    <div id="map"></div>
+    <div id="top-areas"></div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([-19.9205, -43.9378], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    // restrição de visualização para a área aproximada de Belo Horizonte
+    const bhBounds = L.latLngBounds(L.latLng(-20.05, -44.05), L.latLng(-19.7, -43.7));
+    map.setMaxBounds(bhBounds);
+    map.on('drag', function() { map.panInsideBounds(bhBounds, { animate: false }); });
+
+    let allFeatures = [];
+    let markersLayer = L.layerGroup().addTo(map);
+    let neighborhoods = [];
+    let neighLayer = L.layerGroup().addTo(map);
+
+    const typeEl = document.getElementById('filter-type');
+    const statusEl = document.getElementById('filter-status');
+    const searchEl = document.getElementById('search');
+    const listEl = document.getElementById('list');
+
+    function createOption(select, value){
+      const opt = document.createElement('option');
+      opt.value = value; opt.textContent = value; select.appendChild(opt);
+    }
+
+    function renderList(features){
+      listEl.innerHTML = '';
+      features.forEach(f => {
+        const d = document.createElement('div');
+        d.className = 'item';
+        d.textContent = f.properties.title + ' — ' + f.properties.type + ' (' + f.properties.status + ')';
+        d.onclick = () => {
+          const [lon,lat] = f.geometry.coordinates;
+          map.setView([lat,lon], 17);
+        };
+        listEl.appendChild(d);
+      });
+    }
+
+    function renderMarkers(features){
+      markersLayer.clearLayers();
+      features.forEach(f => {
+        const [lon,lat] = f.geometry.coordinates;
+        const m = L.marker([lat,lon]);
+        const props = f.properties || {};
+        const html = `<strong>${props.title || ''}</strong><br>${props.description || ''}<br><em>${props.address || ''}</em>`;
+        m.bindPopup(html);
+        markersLayer.addLayer(m);
+      });
+    }
+
+    function applyFilters(){
+      const type = typeEl.value;
+      const status = statusEl.value;
+      const q = searchEl.value.trim().toLowerCase();
+      let res = allFeatures.slice();
+      if (type) res = res.filter(f => f.properties.type === type);
+      if (status) res = res.filter(f => f.properties.status === status);
+      if (q) res = res.filter(f => (f.properties.title||'').toLowerCase().includes(q) || (f.properties.description||'').toLowerCase().includes(q));
+      renderMarkers(res);
+      renderList(res);
+    }
+
+    // simple point-in-polygon (ray-casting)
+    function pointInPolygon(point, vs) {
+      const x = point[0], y = point[1];
+      let inside = false;
+      for (let i = 0, j = vs.length - 1; i < vs.length; j = i++) {
+        const xi = vs[i][0], yi = vs[i][1];
+        const xj = vs[j][0], yj = vs[j][1];
+        const intersect = ((yi > y) !== (yj > y)) && (x < (xj - xi) * (y - yi) / (yj - yi + 0.0) + xi);
+        if (intersect) inside = !inside;
+      }
+      return inside;
+    }
+
+    function styleForCount(count, max) {
+      if (!max) return '#ffffff';
+      const ratio = count / max;
+      // from light yellow to dark red
+      const r = Math.floor(255 * ratio);
+      const g = Math.floor(200 * (1 - ratio));
+      return `rgba(${r},${g},0,0.6)`;
+    }
+
+    async function load(){
+      try{
+        const r = await fetch('http://localhost:3000/map?t=' + Date.now());
+        const data = await r.json();
+        allFeatures = data.features || [];
+
+        const rn = await fetch('http://localhost:3000/neighborhoods?t=' + Date.now());
+        const nd = await rn.json();
+        neighborhoods = nd.features || [];
+
+        // compute counts per neighborhood using address hints first, then fallback to spatial containment
+        const neighborhoodIndex = new Map(neighborhoods.map(n => [n.properties.name, n]));
+        function neighborhoodFromAddress(address) {
+          if (!address) return null;
+          const text = address.toLowerCase();
+          const mapping = {
+            'buritis': 'Buritis',
+            'sion': 'Sion',
+            'cidade nova': 'Cidade Nova',
+            'cachoeirinha': 'Cachoeirinha',
+            'nova floresta': 'Nova Floresta',
+            'savassi': 'Savassi',
+            'lourdes': 'Lourdes',
+            'santa efig': 'Santa Efigênia',
+            'santa efigenia': 'Santa Efigênia',
+            'horto': 'Horto',
+            'pampulha': 'Pampulha'
+          };
+          for (const key in mapping) {
+            if (text.includes(key)) return mapping[key];
+          }
+          return null;
+        }
+
+        neighborhoods.forEach(n => n.properties.count = 0);
+        allFeatures.forEach(f => {
+          const addressNeighborhood = neighborhoodFromAddress(f.properties.address);
+          if (addressNeighborhood && neighborhoodIndex.has(addressNeighborhood)) {
+            neighborhoodIndex.get(addressNeighborhood).properties.count += 1;
+            return;
+          }
+
+          const pt = f.geometry.coordinates;
+          for (const n of neighborhoods) {
+            const polygons = n.geometry.type === 'MultiPolygon'
+              ? n.geometry.coordinates
+              : [n.geometry.coordinates];
+            let matched = false;
+            for (const poly of polygons) {
+              if (pointInPolygon(pt, poly[0])) {
+                n.properties.count = (n.properties.count || 0) + 1;
+                matched = true;
+                break;
+              }
+            }
+            if (matched) break;
+          }
+        });
+
+        const max = Math.max(0, ...neighborhoods.map(n => n.properties.count || 0));
+
+        // draw neighborhoods
+        neighLayer.clearLayers();
+        neighborhoods.forEach(n => {
+          const polygons = n.geometry.type === 'MultiPolygon'
+            ? n.geometry.coordinates
+            : [n.geometry.coordinates];
+          const col = styleForCount(n.properties.count || 0, max);
+          polygons.forEach(poly => {
+            const coords = poly[0].map(c => [c[1], c[0]]);
+            const p = L.polygon(coords, { color: '#333', weight:1, fillColor: col, fillOpacity: 0.6 });
+            p.bindPopup(`<strong>${n.properties.name}</strong><br>Reclamações: ${n.properties.count || 0}`);
+            neighLayer.addLayer(p);
+          });
+        });
+
+        // top areas
+        const top = neighborhoods.slice().sort((a,b) => (b.properties.count||0) - (a.properties.count||0)).slice(0,5);
+        const topBox = document.getElementById('top-areas');
+        topBox.innerHTML = '<h3>Áreas com mais reclamações</h3>' + top.map((t,i)=>`<div>${i+1} - ${t.properties.name} (${t.properties.count||0})</div>`).join('');
+
+        // populate filters
+        const types = new Set();
+        const statuses = new Set();
+        allFeatures.forEach(f => { types.add(f.properties.type); statuses.add(f.properties.status); });
+        types.forEach(t => createOption(typeEl, t));
+        statuses.forEach(s => createOption(statusEl, s));
+        applyFilters();
+      }catch(e){
+        console.error(e);
+        alert('Falha ao carregar dados da API. Verifique se o servidor está em http://localhost:3000');
+      }
+    }
+
+    typeEl.addEventListener('change', applyFilters);
+    statusEl.addEventListener('change', applyFilters);
+    searchEl.addEventListener('input', () => setTimeout(applyFilters, 200));
+
+    load();
+  </script>
+</body>
+</html>
