@@ -1,0 +1,145 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "Buritis" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-43.9800, -19.9170],
+          [-43.9700, -19.9170],
+          [-43.9700, -19.9400],
+          [-43.9800, -19.9400],
+          [-43.9800, -19.9170]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Sion" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-43.9450, -19.9280],
+          [-43.9350, -19.9280],
+          [-43.9350, -19.9380],
+          [-43.9450, -19.9380],
+          [-43.9450, -19.9280]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Pampulha" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-43.9750, -19.8400],
+          [-43.9400, -19.8400],
+          [-43.9400, -19.8700],
+          [-43.9750, -19.8700],
+          [-43.9750, -19.8400]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Savassi" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-43.9380, -19.9270],
+          [-43.9280, -19.9270],
+          [-43.9280, -19.9340],
+          [-43.9380, -19.9340],
+          [-43.9380, -19.9270]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Lourdes" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-43.9430, -19.9240],
+          [-43.9330, -19.9240],
+          [-43.9330, -19.9310],
+          [-43.9430, -19.9310],
+          [-43.9430, -19.9240]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Santa Efigênia" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-43.9230, -19.9100],
+          [-43.9130, -19.9100],
+          [-43.9130, -19.9180],
+          [-43.9230, -19.9180],
+          [-43.9230, -19.9100]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Horto" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-43.9280, -19.9000],
+          [-43.9180, -19.9000],
+          [-43.9180, -19.9070],
+          [-43.9280, -19.9070],
+          [-43.9280, -19.9000]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Cidade Nova" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-43.9380, -19.9080],
+          [-43.9250, -19.9080],
+          [-43.9250, -19.9180],
+          [-43.9380, -19.9180],
+          [-43.9380, -19.9080]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Cachoeirinha" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-43.9650, -19.8850],
+          [-43.9450, -19.8850],
+          [-43.9450, -19.9000],
+          [-43.9650, -19.9000],
+          [-43.9650, -19.8850]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Nova Floresta" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-43.9300, -19.8980],
+          [-43.9150, -19.8980],
+          [-43.9150, -19.9080],
+          [-43.9300, -19.9080],
+          [-43.9300, -19.8980]
+        ]]
+      }
+    }
+  ]
+}
