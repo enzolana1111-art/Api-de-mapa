@@ -1,0 +1,494 @@
+[
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9378, -19.9205] },
+    "properties": {
+      "id": "a1",
+      "title": "Poste de iluminação com problema",
+      "description": "Poste apagado próximo à praça central.",
+      "type": "Iluminação",
+      "status": "Aberto",
+      "address": "Praça da Liberdade, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9352, -19.9230] },
+    "properties": {
+      "id": "b2",
+      "title": "Lixo acumulado",
+      "description": "Acúmulo de lixo em terreno baldio.",
+      "type": "Limpeza",
+      "status": "Em andamento",
+      "address": "Rua dos Andradas, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9431, -19.9190] },
+    "properties": {
+      "id": "c3",
+      "title": "Buraco na via",
+      "description": "Grande buraco próximo ao ponto de ônibus.",
+      "type": "Pavimentação",
+      "status": "Aberto",
+      "address": "Avenida Afonso Pena, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9325, -19.9158] },
+    "properties": {
+      "id": "d4",
+      "title": "Árvore caída",
+      "description": "Árvore obstruindo calçada.",
+      "type": "Urbanismo",
+      "status": "Concluído",
+      "address": "Praça Raul Soares, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9395, -19.9270] },
+    "properties": {
+      "id": "e5",
+      "title": "Ponto de ônibus danificado",
+      "description": "Cobertura quebrada e risco de queda.",
+      "type": "Transporte",
+      "status": "Em andamento",
+      "address": "Avenida do Contorno, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9310, -19.9212] },
+    "properties": {
+      "id": "f6",
+      "title": "Ruído alto à noite",
+      "description": "Reclamação de barulho em área residencial.",
+      "type": "Convivência",
+      "status": "Aberto",
+      "address": "Bairro Funcionários, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9298, -19.9253] },
+    "properties": {
+      "id": "g7",
+      "title": "Elevador de prédio público parado",
+      "description": "Elevador do prédio da prefeitura está fora de serviço.",
+      "type": "Infraestrutura",
+      "status": "Em andamento",
+      "address": "Rua da Bahia, Savassi, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9415, -19.9268] },
+    "properties": {
+      "id": "h8",
+      "title": "Calçada quebrada",
+      "description": "Pedestres reclamam de calçada irregular na esquina.",
+      "type": "Urbanismo",
+      "status": "Aberto",
+      "address": "Avenida Amazonas, Lourdes, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9485, -19.9192] },
+    "properties": {
+      "id": "i9",
+      "title": "Água acumulada na rua",
+      "description": "Poças grandes e lama após chuva.",
+      "type": "Saneamento",
+      "status": "Em andamento",
+      "address": "Rua Professor Moraes, Buritis, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9368, -19.9112] },
+    "properties": {
+      "id": "j10",
+      "title": "Ponto de ônibus sem abrigo",
+      "description": "Usuários reclamam da falta de abrigo para chuva.",
+      "type": "Transporte",
+      "status": "Aberto",
+      "address": "Rua Pouso Alegre, Santa Efigênia, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9315, -19.9310] },
+    "properties": {
+      "id": "k11",
+      "title": "Comércio irregular",
+      "description": "Feira ambulante ocupa faixa de pedestre.",
+      "type": "Convivência",
+      "status": "Aberto",
+      "address": "Avenida Olegário Maciel, Lourdes, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9520, -19.9080] },
+    "properties": {
+      "id": "l12",
+      "title": "Poste de energia danificado",
+      "description": "Cabos expostos em poste de grande movimentação.",
+      "type": "Iluminação",
+      "status": "Em andamento",
+      "address": "Avenida Raja Gabaglia, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9390, -19.9120] },
+    "properties": {
+      "id": "m13",
+      "title": "Lixo na rua após coleta",
+      "description": "Lixo acumulado na faixa pública mesmo após coleta.",
+      "type": "Limpeza",
+      "status": "Aberto",
+      "address": "Rua São Paulo, Santa Efigênia, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9330, -19.9185] },
+    "properties": {
+      "id": "n14",
+      "title": "Risco de queda de parede",
+      "description": "Muro rachado em área escolar.",
+      "type": "Urbanismo",
+      "status": "Aberto",
+      "address": "Rua Espírito Santo, Savassi, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9450, -19.9145] },
+    "properties": {
+      "id": "o15",
+      "title": "Vazamento de esgoto",
+      "description": "Cheiro forte e água suja no local.",
+      "type": "Saneamento",
+      "status": "Em andamento",
+      "address": "Avenida do Contorno, Funcionários, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9288, -19.9179] },
+    "properties": {
+      "id": "p16",
+      "title": "Rua sem iluminação pública",
+      "description": "Rua inteira sem postes funcionando.",
+      "type": "Iluminação",
+      "status": "Aberto",
+      "address": "Rua Sergipe, Savassi, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9685, -19.9285] },
+    "properties": {
+      "id": "q17",
+      "title": "Cratera em via principal",
+      "description": "Buraco profundo na rua principal do bairro.",
+      "type": "Pavimentação",
+      "status": "Aberto",
+      "address": "Avenida Professor Mário Werneck, Buritis, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9450, -19.8945] },
+    "properties": {
+      "id": "r18",
+      "title": "Esgoto estourado na rua",
+      "description": "Cheiro forte e água suja em via residencial.",
+      "type": "Saneamento",
+      "status": "Em andamento",
+      "address": "Rua Ouro Preto, Cachoeirinha, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9504, -19.9401] },
+    "properties": {
+      "id": "s19",
+      "title": "Carro abandonado na calçada",
+      "description": "Veículo bloqueando passagem de pedestres.",
+      "type": "Trânsito",
+      "status": "Aberto",
+      "address": "Rua Augusto de Lima, Cidade Nova, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9319, -19.9237] },
+    "properties": {
+      "id": "t20",
+      "title": "Barulho alto em condomínio",
+      "description": "Reclamação por som alto até altas horas.",
+      "type": "Convivência",
+      "status": "Aberto",
+      "address": "Rua da Bahia, Sion, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9455, -19.8950] },
+    "properties": {
+      "id": "u21",
+      "title": "Iluminação pública apagada",
+      "description": "Várias lâmpadas apagadas em avenida importante.",
+      "type": "Iluminação",
+      "status": "Em andamento",
+      "address": "Avenida Cristiano Machado, bairro Cachoeirinha, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9655, -19.9275] },
+    "properties": {
+      "id": "v22",
+      "title": "Coleta de lixo irregular",
+      "description": "Lixo permanece na calçada há vários dias.",
+      "type": "Limpeza",
+      "status": "Em andamento",
+      "address": "Rua Professor Moraes, Buritis, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9480, -19.8960] },
+    "properties": {
+      "id": "w23",
+      "title": "Bueiro entupido",
+      "description": "Água acumulada na rua durante chuva.",
+      "type": "Saneamento",
+      "status": "Aberto",
+      "address": "Avenida Vilarinho, Cachoeirinha, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9488, -19.9385] },
+    "properties": {
+      "id": "x24",
+      "title": "Abrigo de ônibus quebrado",
+      "description": "Usuários sem proteção contra chuva no ponto.",
+      "type": "Transporte",
+      "status": "Aberto",
+      "address": "Avenida do Contorno, Cidade Nova, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9330, -19.9238] },
+    "properties": {
+      "id": "y25",
+      "title": "Comércio irregular na calçada",
+      "description": "Barracas ocupam toda a passagem de pedestres.",
+      "type": "Convivência",
+      "status": "Aberto",
+      "address": "Rua da Bahia, Sion, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9370, -19.9128] },
+    "properties": {
+      "id": "z26",
+      "title": "Praça com falta de limpeza",
+      "description": "Lixo e mato alto em praça pública.",
+      "type": "Limpeza",
+      "status": "Aberto",
+      "address": "Praça Sete de Setembro, Santa Efigênia, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9318, -19.9209] },
+    "properties": {
+      "id": "b28",
+      "title": "Moto estacionada em ponto de táxi",
+      "description": "Veículo ocupa espaço de transporte público.",
+      "type": "Trânsito",
+      "status": "Aberto",
+      "address": "Rua dos Guajajaras, Funcionários, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9405, -19.9090] },
+    "properties": {
+      "id": "c29",
+      "title": "Rua cheia de entulho",
+      "description": "Resíduos de construção bloqueiam a calçada.",
+      "type": "Limpeza",
+      "status": "Em andamento",
+      "address": "Avenida Cristiano Machado, Nova Floresta, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9472, -19.9173] },
+    "properties": {
+      "id": "d30",
+      "title": "Árvore com galhos caídos",
+      "description": "Galhos próximos à fiação elétrica.",
+      "type": "Urbanismo",
+      "status": "Aberto",
+      "address": "Avenida Professor Mário Werneck, Buritis, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9488, -19.9390] },
+    "properties": {
+      "id": "e31",
+      "title": "Calçada esburacada",
+      "description": "Pedestres desviam de buracos perto do comércio.",
+      "type": "Pavimentação",
+      "status": "Aberto",
+      "address": "Rua Augusto de Lima, Cidade Nova, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9410, -19.9098] },
+    "properties": {
+      "id": "f32",
+      "title": "Poste com fiação exposta",
+      "description": "Risco elétrico em avenida movimentada.",
+      "type": "Iluminação",
+      "status": "Em andamento",
+      "address": "Avenida Cristiano Machado, Nova Floresta, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9680, -19.9290] },
+    "properties": {
+      "id": "g33",
+      "title": "Vazamento de água em via pública",
+      "description": "Água brotando na via, formando lama.",
+      "type": "Saneamento",
+      "status": "Aberto",
+      "address": "Rua Padre Júlio, Buritis, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9673, -19.9312] },
+    "properties": {
+      "id": "h34",
+      "title": "Calçada danificada",
+      "description": "Pedestres relatam calçada irregular e perigosa.",
+      "type": "Urbanismo",
+      "status": "Em andamento",
+      "address": "Avenida Professor Mário Werneck, Buritis, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9615, -19.9225] },
+    "properties": {
+      "id": "i35",
+      "title": "Poste apagado na avenida",
+      "description": "Lâmpada apagada em avenida movimentada do bairro.",
+      "type": "Iluminação",
+      "status": "Aberto",
+      "address": "Rua Professor Mário Werneck, Buritis, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9440, -19.9315] },
+    "properties": {
+      "id": "j36",
+      "title": "Lixo acumulado em rua residencial",
+      "description": "Sacolas e entulho nas calçadas do bairro.",
+      "type": "Limpeza",
+      "status": "Aberto",
+      "address": "Rua Pitangui, Sion, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9475, -19.8945] },
+    "properties": {
+      "id": "k37",
+      "title": "Bueiro entupido em avenida",
+      "description": "Esgoto transbordando durante chuva.",
+      "type": "Saneamento",
+      "status": "Em andamento",
+      "address": "Avenida Cristiano Machado, Cachoeirinha, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9420, -19.9095] },
+    "properties": {
+      "id": "l38",
+      "title": "Poste com faíscas",
+      "description": "Fiação exposta e risco elétrico na calçada.",
+      "type": "Iluminação",
+      "status": "Aberto",
+      "address": "Rua Professor Moraes, Nova Floresta, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9405, -19.9100] },
+    "properties": {
+      "id": "m39",
+      "title": "Lixo na rua após coleta",
+      "description": "Resíduos deixados na via mesmo após coleta.",
+      "type": "Limpeza",
+      "status": "Aberto",
+      "address": "Rua Professor Moraes, Nova Floresta, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9480, -19.9397] },
+    "properties": {
+      "id": "n40",
+      "title": "Carro abandonado na calçada",
+      "description": "Veículo bloqueando passagem de pedestres.",
+      "type": "Trânsito",
+      "status": "Aberto",
+      "address": "Avenida do Contorno, Cidade Nova, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9338, -19.9275] },
+    "properties": {
+      "id": "o41",
+      "title": "Muro em risco de queda",
+      "description": "Muro rachado em área de passagem de pedestres.",
+      "type": "Urbanismo",
+      "status": "Aberto",
+      "address": "Rua Levindo Lopes, Savassi, Belo Horizonte"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": { "type": "Point", "coordinates": [-43.9325, -19.9136] },
+    "properties": {
+      "id": "p42",
+      "title": "Calçada esburacada",
+      "description": "Rua com várias depressões e risco para cadeirantes.",
+      "type": "Pavimentação",
+      "status": "Em andamento",
+      "address": "Rua Goitacazes, Santa Efigênia, Belo Horizonte"
+    }
+  }
+]
