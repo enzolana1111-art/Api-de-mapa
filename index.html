@@ -55,7 +55,6 @@
       attribution: '© OpenStreetMap'
     }).addTo(map);
 
-    // restrição de visualização para a área aproximada de Belo Horizonte
     const bhBounds = L.latLngBounds(L.latLng(-20.05, -44.05), L.latLng(-19.7, -43.7));
     map.setMaxBounds(bhBounds);
     map.on('drag', function() { map.panInsideBounds(bhBounds, { animate: false }); });
@@ -113,7 +112,6 @@
       renderList(res);
     }
 
-    // simple point-in-polygon (ray-casting)
     function pointInPolygon(point, vs) {
       const x = point[0], y = point[1];
       let inside = false;
@@ -129,7 +127,6 @@
     function styleForCount(count, max) {
       if (!max) return '#ffffff';
       const ratio = count / max;
-      // from light yellow to dark red
       const r = Math.floor(255 * ratio);
       const g = Math.floor(200 * (1 - ratio));
       return `rgba(${r},${g},0,0.6)`;
@@ -145,7 +142,6 @@
         const nd = await rn.json();
         neighborhoods = nd.features || [];
 
-        // compute counts per neighborhood using address hints first, then fallback to spatial containment
         const neighborhoodIndex = new Map(neighborhoods.map(n => [n.properties.name, n]));
         function neighborhoodFromAddress(address) {
           if (!address) return null;
@@ -196,7 +192,7 @@
 
         const max = Math.max(0, ...neighborhoods.map(n => n.properties.count || 0));
 
-        // draw neighborhoods
+        
         neighLayer.clearLayers();
         neighborhoods.forEach(n => {
           const polygons = n.geometry.type === 'MultiPolygon'
@@ -211,12 +207,10 @@
           });
         });
 
-        // top areas
         const top = neighborhoods.slice().sort((a,b) => (b.properties.count||0) - (a.properties.count||0)).slice(0,5);
         const topBox = document.getElementById('top-areas');
         topBox.innerHTML = '<h3>Áreas com mais reclamações</h3>' + top.map((t,i)=>`<div>${i+1} - ${t.properties.name} (${t.properties.count||0})</div>`).join('');
 
-        // populate filters
         const types = new Set();
         const statuses = new Set();
         allFeatures.forEach(f => { types.add(f.properties.type); statuses.add(f.properties.status); });
